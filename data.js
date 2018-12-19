@@ -1,9 +1,10 @@
-// var dbComponents = require('./db.js')
-
+var dbComponents = require('./db.js')
+var faker = require('faker');
 let highlightAmenities = ['Cats and Dogs Allowed', 'Full-time Doorman', 'Washer/Dryer In-Unit', 'Elevator']
 let buildingAmenities = ['Bike Room', 'Green Building', 'Package Room', 'Children\'s playroom', 'Concierge', 'Laundry in Building', 'Smoke-free', 'Storage Available', 'Live-in Super', 'Cold-Storage', 'Gym', 'Virtual Doorman', 'Concierge', 'Media Room', 'Community Recreation Facility', 'Swimming Pool', 'Parking Available']
 let listingAmenities = ['Central Air-Conditioning', 'Dishwasher', 'Storage Available', 'Fireplace']
 let outdoorAmenities = ['Terrace', 'Roof Deck', 'Garden']
+let counter = 0;
 
 let highlightsCreator = (HLAArray) => {
     let length = parseInt(Math.random()*(HLAArray.length+1));
@@ -56,5 +57,7 @@ let outdoorAmensCreator = (OAArray) => {
     }
     return newOArray
 };
-// dbComponents.saver(counter, highlightAmenities, buildingAmenities,listingAmenities,outdoorAmenities);
 
+dbComponents.saver(counter, faker.lorem.words(num = 190), highlightAmenities, buildingAmenities,listingAmenities,outdoorAmenities);
+
+//Got error "FATAL ERROR: Ineffective mark-compacts near heap limit Allocation failed - JavaScript heap out of memory"

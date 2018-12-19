@@ -1,9 +1,7 @@
 var mongoose = require('mongoose');
-var mongoUri = 'mongodb://localhost/pokemon';
+var mongoUri = 'mongodb://localhost/streetBreezy';
 
-var db = mongoose.connect('mongodb://localhost:27017/streetBreezy', {
-    useMongoClient: true
-});
+var db = mongoose.connect('mongodb://localhost:27017/streetBreezy');
 
 let DescriptionBoxSchema = mongoose.Schema({
     id: Number,
@@ -16,7 +14,7 @@ let DescriptionBoxSchema = mongoose.Schema({
 
 let DescriptionBox = mongoose.model('descriptionBox', DescriptionBoxSchema);
 
-let saver = (counter, highlightAmensArray, buildingAmensArray, listingAmensArray, outdoorAmensArray) => {
+let saver = (counter, description, highlightAmensArray, buildingAmensArray, listingAmensArray, outdoorAmensArray) => {
     while(counter < 100){
         DescriptionBox.findOne({id: counter}).exec((err, exists) => {
             if(err){
@@ -24,11 +22,11 @@ let saver = (counter, highlightAmensArray, buildingAmensArray, listingAmensArray
             } else if (!exists){
                 let newDescriptionBox = new DescriptionBox({
                     id: counter,
-                    description: description.description, 
-                    highlightAmens: new Array(randomIndex(highlightAmensArray)), 
-                    buildingAmens: new Array(randomIndex(buildingAmensArray)), 
-                    listingAmens: new Array(randomIndex(listingAmensArray)) || null, 
-                    outdoorAmens:new Array(randomIndex(outdoorAmensArray)) || null 
+                    description: description, 
+                    highlightAmens: highlightAmensArray || null, 
+                    buildingAmens: buildingAmensArray || null, 
+                    listingAmens:listingAmensArray || null, 
+                    outdoorAmens:outdoorAmensArray || null 
                 }); 
                 newDescriptionBox.save();
             }
