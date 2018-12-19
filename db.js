@@ -6,6 +6,7 @@ var db = mongoose.connect('mongodb://localhost:27017/streetBreezy', {
 });
 
 let DescriptionBoxSchema = mongoose.Schema({
+    id: Number,
     description: String,
     highlightAmens: Array,
     buildingAmens: Array,
@@ -15,30 +16,34 @@ let DescriptionBoxSchema = mongoose.Schema({
 
 let DescriptionBox = mongoose.model('descriptionBox', DescriptionBoxSchema);
 
-let saver = (description) => {
-    DescriptionBox.findOne({description: description}).exec((err, exists) => {
-        if(err){
-            console.log(err);
-        } else if (!exists){
-            let newDescriptionBox = new DescriptionBox({
-                description: description.description, 
-                highlightAmens: description.highlightAmens, 
-                buildingAmens: description.buildingAmens, 
-                listingAmens: description.listingAmens || null, 
-                outdoorAmens: description.outdoorAmens || null 
-            }); 
-            newDescriptionBox.save();
-        }
-    })
+let saver = (counter, highlightAmensArray, buildingAmensArray, listingAmensArray, outdoorAmensArray) => {
+    while(counter < 100){
+        DescriptionBox.findOne({id: counter}).exec((err, exists) => {
+            if(err){
+                console.log(err);
+            } else if (!exists){
+                let newDescriptionBox = new DescriptionBox({
+                    id: counter,
+                    description: description.description, 
+                    highlightAmens: new Array(randomIndex(highlightAmensArray)), 
+                    buildingAmens: new Array(randomIndex(buildingAmensArray)), 
+                    listingAmens: new Array(randomIndex(listingAmensArray)) || null, 
+                    outdoorAmens:new Array(randomIndex(outdoorAmensArray)) || null 
+                }); 
+                newDescriptionBox.save();
+            }
+            counter++;
+        })
+    }
 }
 
-let retriever = (callback) => {
+let retriever = () => {
     let search = parseInt((Math.random() * 100))
     DescriptionBox.find({_id: search}).exect((err, data) => {
         if(err){
             callback(err);
         } else if(data){
-            callback(null, data)
+            callback(data)
         }
     })
 }
