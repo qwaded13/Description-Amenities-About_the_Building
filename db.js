@@ -34,18 +34,6 @@ let saver = (description, highlightAmenitiesArray, buildingAmenitiesArray, listi
     }
 }
 
-let retriever = () => {
-    let search = parseInt((Math.random() * 100))
-    DescriptionBox.find({_id: search}).exect((err, data) => {
-        if(err){
-            callback(err);
-        } else if(data){
-            callback(data)
-        }
-    })
-}
-
 module.exports.db = db;
-module.exports.retriever = retriever;
 module.exports.saver = saver;
 module.exports.DescriptionBox = DescriptionBox;

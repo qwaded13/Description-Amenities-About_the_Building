@@ -11,10 +11,8 @@ class App extends React.Component{
             highlightAmens: [],
             buildingAmens: [],
             listingAmens: [],
-            outdoorAmens: [],
-            //dbCapacity: 0
+            outdoorAmens: []
         }
-        //this.populate = this.populate.bind(this);
     }
 
     // componentDidMount(){
