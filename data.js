@@ -5,8 +5,8 @@ let buildingAmenities = ['Bike Room', 'Green Building', 'Package Room', 'Childre
 let listingAmenities = ['Central Air-Conditioning', 'Dishwasher', 'Storage Available', 'Fireplace']
 let outdoorAmenities = ['Terrace', 'Roof Deck', 'Garden']
 
-let highlightsCreator = (HLAArray) => {
-    let length = parseInt(Math.random()*(HLAArray.length+1));
+let highlightsCreator = (divider, HLAArray) => {
+    let length = parseInt((Math.random()*(HLAArray.length+1))/divider);
     let newHLArray = [];
     while(newHLArray.length < length){
         let amenity = HLAArray[parseInt(Math.random()*HLAArray.length)];
@@ -18,8 +18,8 @@ let highlightsCreator = (HLAArray) => {
     return newHLArray
 }
 
-let buildingAmensCreator = (BAArray) => {
-    let length = parseInt(Math.random()*(BAArray.length+1));
+let buildingAmensCreator = (divider, BAArray) => {
+    let length = parseInt((Math.random()*(BAArray.length+1))/divider);
     let newBArray = [];
     while(newBArray.length < length){
         let amenity = BAArray[parseInt(Math.random()*BAArray.length)];
@@ -31,8 +31,8 @@ let buildingAmensCreator = (BAArray) => {
     return newBArray
 };
 
-let listingAmensCreator = (LAArray) => {
-    let length = parseInt(Math.random()*(LAArray.length+1));
+let listingAmensCreator = (divider, LAArray) => {
+    let length = parseInt((Math.random()*(LAArray.length+1))/divider);
     let newLArray = [];
     while(newLArray.length < length){
         let amenity = LAArray[parseInt(Math.random()*LAArray.length)];
@@ -44,8 +44,8 @@ let listingAmensCreator = (LAArray) => {
     return newLArray;
 };
 
-let outdoorAmensCreator = (OAArray) => {
-    let length = parseInt(Math.random()*(OAArray.length+1));
+let outdoorAmensCreator = (divider, OAArray) => {
+    let length = parseInt((Math.random()*(OAArray.length+1))/divider);
     let newOArray = [];
     while(newOArray.length < length){
         let amenity = OAArray[parseInt(Math.random()*OAArray.length)];
@@ -63,7 +63,7 @@ let generator = () => {
     return description;
 }
 
-dbComponents.saver(generator(), highlightsCreator(highlightAmenities), buildingAmensCreator(buildingAmenities), listingAmensCreator(listingAmenities), outdoorAmensCreator(outdoorAmenities));
+dbComponents.saver(generator(), highlightsCreator, highlightAmenities, buildingAmensCreator, buildingAmenities, listingAmensCreator, listingAmenities, outdoorAmensCreator, outdoorAmenities);
 
 
 //Got error "FATAL ERROR: Ineffective mark-compacts near heap limit Allocation failed - JavaScript heap out of memory"
