@@ -1,18 +1,21 @@
 let express = require('express');
 let bodyParser = require('body-parser');
 let mongoCompos = require('./db.js');
+let dbComponents = require('./db.js')
 
 let server = express();
 server.use(bodyParser.json());
 server.use(express.static(__dirname, './client.html'));
 
 app.get('/streetBreezy', (req,res) => {
-    mongoCompos.retriever(res.send)
-})
-
-app.post('/streetBreezy', (req,res) => {
-    let {description} = req.body;
-    mongoCompos.saver(description);
+    let {id} = req.query;
+    DescriptionBox.find({id: id}).exec((err, data) => {
+        if(err){
+            res.send(err);
+        } else if(data){
+            res.send(data);
+        }
+    })
 })
 
 let port = 2500
