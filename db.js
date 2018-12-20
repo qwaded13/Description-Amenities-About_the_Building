@@ -1,5 +1,4 @@
 var mongoose = require('mongoose');
-var mongoUri = 'mongodb://localhost/streetBreezy';
 
 var db = mongoose.connect('mongodb://localhost:27017/streetBreezy');
 
@@ -14,23 +13,23 @@ let DescriptionBoxSchema = mongoose.Schema({
 
 let DescriptionBox = mongoose.model('descriptionBox', DescriptionBoxSchema);
 
-let saver = (counter, description, highlightAmensArray, buildingAmensArray, listingAmensArray, outdoorAmensArray) => {
-    while(counter < 100){
-        DescriptionBox.findOne({id: counter}).exec((err, exists) => {
+let saver = (description, highlightAmenitiesArray, buildingAmenitiesArray, listingAmenitiesArray, outdoorAmenitiesArray) => {
+    console.log('SAVER CALLED')
+    for(let i = 0; i < 100; i++){
+        DescriptionBox.findOne({id: i}, (err, exists) => {
             if(err){
-                console.log(err);
+                console.log('THERE IS AN ERROR!!!' , err);
             } else if (!exists){
                 let newDescriptionBox = new DescriptionBox({
-                    id: counter,
+                    id: i,
                     description: description, 
-                    highlightAmens: highlightAmensArray || null, 
-                    buildingAmens: buildingAmensArray || null, 
-                    listingAmens:listingAmensArray || null, 
-                    outdoorAmens:outdoorAmensArray || null 
+                    highlightAmens: highlightAmenitiesArray || null, 
+                    buildingAmens: buildingAmenitiesArray || null,
+                    listingAmens: listingAmenitiesArray || null, 
+                    outdoorAmens: outdoorAmenitiesArray || null 
                 }); 
                 newDescriptionBox.save();
             }
-            counter++;
         })
     }
 }
@@ -47,5 +46,6 @@ let retriever = () => {
 }
 
 module.exports.db = db;
-module.exports.saver = saver;
 module.exports.retriever = retriever;
+module.exports.saver = saver;
+module.exports.DescriptionBox = DescriptionBox;
