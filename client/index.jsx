@@ -50,14 +50,15 @@ class App extends React.Component{
                 <h5>Description: </h5>
                 <p id='description'>{this.state.description}</p>
             </div>
+            <hr class='separator'/>
             <div>  
-                <h5>Highlight Amenities: </h5>
+                <h5>Highlight Amenities </h5>
                 <HighlightAmens highlights={this.state.highlightAmens}/>
-                <h5>Building Amenities: </h5>
+                <h5>Building Amenities </h5>
                 <BuildingAmens buildings={this.state.buildingAmens}/>
-                <h5>Listing Amenities: </h5>
+                <h5>Listing Amenities </h5>
                 <ListingAmens listings={this.state.listingAmens}/>
-                <h5>Outdoor Amenities: </h5>
+                <h5>Outdoor Amenities </h5>
                 <OutdoorAmens outdoors={this.state.outdoorAmens}/>
             </div>
         </div>
