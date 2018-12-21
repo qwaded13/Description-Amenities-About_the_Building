@@ -1,0 +1,41 @@
+#entireDescriptionBox{
+    margin-left: 50px;
+    width: 500px;
+    background-color: blanchedalmond;
+}
+
+table{
+    height: 100px;
+    width: 500px;
+}
+
+.tabletext{
+    text-align: center;
+    font-size: 10pt;
+}
+
+ul{
+    text-align: center;
+    list-style-type: none;
+    columns: 2;
+}
+
+li{
+    margin: 5px;
+}
+
+#petsAllowed{
+    list-style-image: url('https://cdn-assets-s3.streeteasy.com/assets/svg/amenities/pets-de6ef011d202b0b144a208fb05c1f5751fef9f346f80b0034160c0f5b1eacd86.svg')
+}
+
+#fullTimeDoorman{
+    list-style-image: url('https://cdn-assets-s3.streeteasy.com/assets/svg/amenities/doorman-ad5076f835f9f8d6b2cb33bed3ade62bb5eb7c8088ffcc66dec1d6b2f25d076d.svg')
+}
+
+#elevator{
+    list-style-image: url('https://cdn-assets-s3.streeteasy.com/assets/svg/amenities/elevator-4d75d7c5d2335a6f215837e7b3104e50d796388e8cb3ccbaf25c67a5b1f00fae.svg')
+}
+
+#washer_dryerUnit{
+    list-style-image: url('https://cdn-assets-s3.streeteasy.com/assets/svg/amenities/laundry-3bda4fe74ebb92d2a28e80d8164deea6ee4a94ecca832dac8fef3abdbc8e54f6.svg')
+}
