@@ -1,6 +1,7 @@
 var mongoose = require('mongoose');
 
-var db = mongoose.connect('mongodb://localhost:27017/streetBreezy');
+
+var db = mongoose.connect(process.env.PORT || 'mongodb://localhost:27017/streetBreezy');
 
 let DescriptionBoxSchema = mongoose.Schema({
     id: Number,
