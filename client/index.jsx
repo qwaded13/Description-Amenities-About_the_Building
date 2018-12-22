@@ -27,7 +27,7 @@ class App extends React.Component{
 
     renderer(){
         //console.log('renderer called')
-        Axios.get('/streetBreezy/api/99')
+        Axios.get('/streetBreezy/api/92')
         .then((response) => {
             //console.log(response.data);
             let data = response.data;
