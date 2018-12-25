@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon Description-Amenities-About_the_Building/server.js",
-    "proxy-start": "nodemon Description-Amenities-About_the_Building-PROXY/proxy.js",
+    "start": "nodemon ./server.js",
+    "proxy-start": "nodemon ./proxy.js",
     "react-dev": "webpack -d --watch"
   },
   "author": "",
