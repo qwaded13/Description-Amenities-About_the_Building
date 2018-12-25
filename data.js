@@ -58,9 +58,7 @@ let outdoorAmensCreator = (divider, OAArray) => {
 };
 
 let generator = () => {
-    let description = faker.lorem.words(num = 190);
-    //console.log(description);
-    return description;
+    return faker.lorem.words(num = 190);
 }
 
 dbComponents.saver(generator(), highlightsCreator, highlightAmenities, buildingAmensCreator, buildingAmenities, listingAmensCreator, listingAmenities, outdoorAmensCreator, outdoorAmenities);

@@ -6,13 +6,15 @@ import HighlightAmens from './highlights.jsx';
 import BuildingAmens from './building.jsx';
 import ListingAmens from './listing.jsx';
 import OutdoorAmens from './outdoor.jsx';
+import showMore from './addMore.js';
 
 class App extends React.Component{
     constructor(props){
         super(props);
         this.state = {
             fullDescriptionBox: undefined,
-            description: '',
+            descriptionPreSpan: '',
+            descriptionPostSpan: '',
             highlightAmens: [],
             buildingAmens: [],
             listingAmens: [],
@@ -32,7 +34,8 @@ class App extends React.Component{
             //console.log(response.data);
             let data = response.data;
             this.setState({fullDescriptionBox: data, 
-                description: data.description, 
+                descriptionPreSpan: data.description.slice(0,300), 
+                descriptionPostSpan: data.description.slice(300),
                 highlightAmens: data.highlightAmens, 
                 buildingAmens: data.buildingAmens, 
                 listingAmens: data.listingAmens, 
@@ -48,7 +51,8 @@ class App extends React.Component{
             </div>
             <div>
                 <h5>Description: </h5>
-                <p id='description'>{this.state.description}</p>
+                <p id='description'>{this.state.descriptionPreSpan}<span id='dots'>...</span><span id='moreText'>{this.state.descriptionPostSpan}</span></p>
+                <button onClick={() => {showMore()}} id='readMore'>Read More</button>
             </div>
             <hr class='separator'/>
             <div>  
