@@ -27,7 +27,7 @@ class App extends React.Component{
 
     renderer(){
         //console.log('renderer called')
-        Axios.get('/streetBreezy/api/92')
+        Axios.get('/streetBreezy/api/99')
         .then((response) => {
             //console.log(response.data);
             let data = response.data;
@@ -66,9 +66,4 @@ class App extends React.Component{
     }
 }
 
-ReactDOM.render(<App />, document.getElementById('app'))
-
-
-
-
-
+ReactDOM.render(<App />, document.getElementById('app'));
