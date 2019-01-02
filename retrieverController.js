@@ -1,13 +1,19 @@
 var dbComponents = require('./db.js');
 
-exports.retriever = (req,res) => {
-    let {id} = req.params;
+module.exports.retriever = (req,res) => {
+    console.log('this is req param at the controller:', req.params);
+    const {id} = req.params;
     dbComponents.DescriptionBox.findOne({id: id}).exec((err, data) => {
         if(err){
-            res.send(err);
+            res.sendStatus(status);
         } else if(data){
+            console.log('this is the data from the db: ', data)
             res.send(data);
         }
     })
+}
+
+module.exports.alt = (req, res) => {
+    res.send(404);
 }
 

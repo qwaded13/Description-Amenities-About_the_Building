@@ -1,12 +1,13 @@
 #entireDescriptionBox{
-    margin-left: 50px;
-    width: 500px;
-    background-color: blanchedalmond;
+    width: 100%;
+    background-color: lavenderblush;
+    line-height: 40px;
 }
 
 table{
     height: 100px;
-    width: 500px;
+    width: 100%;
+    border: solid 1px black;
 }
 
 .tabletext{
@@ -20,25 +21,46 @@ ul{
 }
 
 li{
-    margin: 5px;
+    margin: 0 auto;
 }
 
 #petsAllowed{
-    list-style-image: url('https://cdn-assets-s3.streeteasy.com/assets/svg/amenities/pets-de6ef011d202b0b144a208fb05c1f5751fef9f346f80b0034160c0f5b1eacd86.svg')
+    list-style-image: url('https://cdn-assets-s3.streeteasy.com/assets/svg/amenities/pets-de6ef011d202b0b144a208fb05c1f5751fef9f346f80b0034160c0f5b1eacd86.svg');
+    list-style-position: inside;
 }
 
 #fullTimeDoorman{
-    list-style-image: url('https://cdn-assets-s3.streeteasy.com/assets/svg/amenities/doorman-ad5076f835f9f8d6b2cb33bed3ade62bb5eb7c8088ffcc66dec1d6b2f25d076d.svg')
+    list-style-image: url('https://cdn-assets-s3.streeteasy.com/assets/svg/amenities/doorman-ad5076f835f9f8d6b2cb33bed3ade62bb5eb7c8088ffcc66dec1d6b2f25d076d.svg');
+    list-style-position: inside;
 }
 
 #elevator{
-    list-style-image: url('https://cdn-assets-s3.streeteasy.com/assets/svg/amenities/elevator-4d75d7c5d2335a6f215837e7b3104e50d796388e8cb3ccbaf25c67a5b1f00fae.svg')
+    list-style-image: url('https://cdn-assets-s3.streeteasy.com/assets/svg/amenities/elevator-4d75d7c5d2335a6f215837e7b3104e50d796388e8cb3ccbaf25c67a5b1f00fae.svg');
+    list-style-position: inside;
 }
 
 #washer_dryerUnit{
-    list-style-image: url('https://cdn-assets-s3.streeteasy.com/assets/svg/amenities/laundry-3bda4fe74ebb92d2a28e80d8164deea6ee4a94ecca832dac8fef3abdbc8e54f6.svg')
+    list-style-image: url('https://cdn-assets-s3.streeteasy.com/assets/svg/amenities/laundry-3bda4fe74ebb92d2a28e80d8164deea6ee4a94ecca832dac8fef3abdbc8e54f6.svg');
+    list-style-position: inside;
 }
 
 #moreText{
     display: none;
+}
+
+#descriptionBox{
+    margin-bottom: -10px;
+    background-image: linear-gradient(to bottom, transparent, pink);
+}
+
+#description{
+    overflow: hidden;
+}
+
+h5{
+    font-weight: bolder;
+}
+
+#highlightAmens{
+    align-content: center;
 }

@@ -13,6 +13,7 @@ class App extends React.Component{
         super(props);
         this.state = {
             fullDescriptionBox: undefined,
+            description: '',
             descriptionPreSpan: '',
             descriptionPostSpan: '',
             highlightAmens: [],
@@ -20,20 +21,23 @@ class App extends React.Component{
             listingAmens: [],
             outdoorAmens: []
         }
-        this.renderer = this.renderer.bind(this);
+        this.renderFunc = this.renderFunc.bind(this);
     }
 
     componentDidMount(){
-        this.renderer();
+        console.log('Mounted. Running renderFunc');
+        this.renderFunc();
     }
 
-    renderer(){
-        //console.log('renderer called')
-        Axios.get('/streetBreezy/api/99')
+    renderFunc(){
+        // console.log(window.location);
+        Axios.get(`/streetBreezy/api${window.location.pathname}`)
         .then((response) => {
-            //console.log(response.data);
+            console.log('something hit the user client')
             let data = response.data;
+            console.log('this is the response data: ', data)
             this.setState({fullDescriptionBox: data, 
+                description: data.description,
                 descriptionPreSpan: data.description.slice(0,300), 
                 descriptionPostSpan: data.description.slice(300),
                 highlightAmens: data.highlightAmens, 
@@ -49,14 +53,14 @@ class App extends React.Component{
             <div>
                 <Table />
             </div>
-            <div>
+            <div id='descriptionBox'>
                 <h5>Description: </h5>
                 <p id='description'>{this.state.descriptionPreSpan}<span id='dots'>...</span><span id='moreText'>{this.state.descriptionPostSpan}</span></p>
                 <button onClick={() => {showMore()}} id='readMore'>Read More</button>
             </div>
-            <hr class='separator'/>
+            <hr className='separator'/>
             <div>  
-                <h5>Highlight Amenities </h5>
+                <h5 id='highlightAmens'>Highlight Amenities </h5>
                 <HighlightAmens highlights={this.state.highlightAmens}/>
                 <h5>Building Amenities </h5>
                 <BuildingAmens buildings={this.state.buildingAmens}/>
@@ -70,4 +74,4 @@ class App extends React.Component{
     }
 }
 
-ReactDOM.render(<App />, document.getElementById('app'));
+ReactDOM.render(<App />, document.getElementById('description-container'));
