@@ -7,7 +7,7 @@ let server = express();
 server.use(bodyParser.json());
 server.use('/:id', express.static(path.join(__dirname, '/client/dist')));
 
-server.get('/streetBreezy/api/:id', retrieveFunctions.retriever);
+server.get('/streetBreezy/api', retrieveFunctions.retriever);
 server.get('/*', retrieveFunctions.alt);
 
 let port = 3009
