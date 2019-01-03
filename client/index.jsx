@@ -30,7 +30,7 @@ class App extends React.Component{
     }
 
     renderFunc(){
-        // console.log(window.location);
+        console.log(window.location);
         Axios.get(`{/streetBreezy/api${window.location.pathname}`)
         .then((response) => {
             console.log('something hit the user client')
