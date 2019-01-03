@@ -10,7 +10,7 @@ server.use('/:id', express.static(path.join(__dirname, '/client/dist')));
 server.get('/streetBreezy/api/:id', retrieveFunctions.retriever);
 server.get('/*', retrieveFunctions.alt);
 
-let port = process.env.PORT || 3009
+let port = 3009
 server.listen(port, () => {
     console.log(`listning on port ${port}`)
 })
