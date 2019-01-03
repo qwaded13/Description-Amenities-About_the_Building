@@ -5,6 +5,7 @@ module.exports.retriever = (req,res) => {
     const {id} = req.params;
     dbComponents.DescriptionBox.findOne({id: id}).exec((err, data) => {
         if(err){
+            console.log(`ERROR AT SERVER FOR ID ${id}`);
             res.sendStatus(status);
         } else if(data){
             console.log('this is the data from the db: ', data)

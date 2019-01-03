@@ -45,6 +45,9 @@ class App extends React.Component{
                 listingAmens: data.listingAmens, 
                 outdoorAmens: data.outdoorAmens});
         })
+        .catch((err) => {
+            console.log(`ERROR LOADING DESCRIPTION WITH ID ${window.location.pathname}`);
+        })
     }
 
     render(){
