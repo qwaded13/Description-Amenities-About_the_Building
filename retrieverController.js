@@ -15,6 +15,7 @@ module.exports.retriever = (req,res) => {
 }
 
 module.exports.alt = (req, res) => {
+    console.log(`ALT RETRIEVER CALLED AT CONTOLLER FOR ID ${id}`);
     res.send(404);
 }
 
