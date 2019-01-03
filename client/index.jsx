@@ -47,6 +47,7 @@ class App extends React.Component{
         })
         .catch((err) => {
             console.log(`ERROR LOADING DESCRIPTION WITH ID ${window.location.pathname}`);
+            console.log('THIS WAS THE ERR: ', err);
         })
     }
 
