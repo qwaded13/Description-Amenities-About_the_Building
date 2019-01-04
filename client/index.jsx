@@ -25,6 +25,7 @@ class App extends React.Component{
     }
 
     componentDidMount(){
+        console.log('LOVE YOU KENNNYYYY')
         console.log('Mounted. Running renderFunc');
         console.log(window.location);
         this.renderFunc();
