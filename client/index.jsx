@@ -59,7 +59,7 @@ class App extends React.Component{
                 <Table />
             </div>
             <div id='descriptionBox'>
-                <h5>Description: </h5>
+                <h5 id='descriptionHead'>Description: </h5>
                 <p id='description'>{this.state.descriptionPreSpan}<span id='dots'>...</span><span id='moreText'>{this.state.descriptionPostSpan}</span></p>
                 <button onClick={() => {showMore()}} id='readMore'>Read More</button>
             </div>

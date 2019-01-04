@@ -13,7 +13,7 @@ table{
 }
 
 .tabletext{
-    text-align: center;
+    text-align: left;
     font-size: 10pt;
 }
 
@@ -38,6 +38,11 @@ ul{
 
 li{
     margin: 0 auto;
+}
+
+#descriptionHead{
+    font-size: 12px;
+    font-weight: 4px;
 }
 
 #petsAllowed{
@@ -71,6 +76,7 @@ li{
 
 #description{
     overflow: hidden;
+    text-align: left;
 }
 
 h5{
