@@ -9,7 +9,7 @@ server.use(bodyParser.json());
 server.use(express.static(path.join(__dirname, '/client/dist')));
 server.use(cors());
 
-server.get('/streetBreezy/api/:id', retrieveFunctions.retriever);
+server.get('/streetBreezy/api/', retrieveFunctions.retriever);
 // server.get('/*', retrieveFunctions.alt);
 
 let port = 3009
