@@ -107,6 +107,6 @@ h5{
     font-size: 12px;
     border: none;
     text-transform: uppercase;
-    float: left;
+    margin-left: -50px;
 }
 
