@@ -33,8 +33,8 @@ var Table = () => {
                 <td className='tabletext' id='table2x0'>
                     <span>ESTIMATED PAYMENT</span>
                     <br></br>
-                    {/* <span><a target='_blank' href='THIS IS A POPUP'>${parseInt((Math.random())*100000)}</a></span> */}
-                    <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">${parseInt((Math.random())*100000)}howdy</button>
+                    <span><a target='_blank' href='THIS IS A POPUP'>${parseInt((Math.random())*100000)}</a></span>
+                    {/* <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">${parseInt((Math.random())*100000)}</button>
                         <div id="myModal" class="modal fade" role="dialog">
                             <div class="modal-dialog">
                                 <div class="modal-content">
@@ -50,7 +50,7 @@ var Table = () => {
                                 </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> */}
                 </td>
             </tr>
             <tr id='tableRow1'>
