@@ -9,7 +9,7 @@ table{
     height: 100px;
     width: 100%;
     table-layout: auto;
-    border: solid 1px transparent;
+    border: solid 0.5px rgb(54, 144, 228);
 }
 
 .tabletext{
@@ -17,16 +17,12 @@ table{
     font-size: 10pt;
 }
 
-#table0x0, #table1x0{
-    border-right: solid 1px rgb(54, 144, 228);
+#table0x0, #table0x1{
+    border-right: solid 1px transparent;
 }
 
-#table0x2, #table1x2{
-    border-left: solid 1px rgb(54, 144, 228);
-}
-
-#table0x0, #table0x1, #table0x2{
-    border-right: solid 1px rgb(54, 144, 228);
+#table2x0, #table2x1{
+    border-right: solid 1px transparent;
 }
 
 ul{
