@@ -18,7 +18,7 @@ var Table = () => {
                 <td className='tabletext' id='table2x0'>
                     <span>ESTIMATED PAYMENT</span>
                     <br></br>
-                    <span><a target='_blank' href='THIS IS A POPUP'>${parseInt((Math.random())*100000)}</a></span>
+                    <span><a target='_blank' href='http://static.tvtropes.org/pmwiki/pub/images/nvtelen.JPG'>${parseInt((Math.random())*100000)}</a></span>
                 </td>
             </tr>
             <tr id='tableRow1'>
