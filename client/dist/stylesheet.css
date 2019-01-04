@@ -71,9 +71,11 @@ li{
 }
 
 #description{
+    font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
+    font-size: 16px;
     overflow: hidden;
     text-align: left;
-    background-image: linear-gradient(to bottom, transparent, rgb(236, 236, 236));
+    /* background-image: linear-gradient(to bottom, transparent, rgb(236, 236, 236)); */
 }
 
 h5{
@@ -85,7 +87,7 @@ h5{
     font-size: 32px;
     line-height: 40px;
     font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
-    font-weight: 300;
+    font-weight: 200;
 }
 
 #highlightAmens{
@@ -99,41 +101,3 @@ h5{
     align-content: left;
 }
 
-#calcPopup{
-    border: none;
-}
-
-.modal {
-    display: none; 
-    position: fixed;
-    z-index: 1000;
-    left: 0;
-    top: 0;
-    width: 100%; 
-    height: 100%;
-    overflow: auto; 
-    background-color: white;
-    /* background-color: rgba(0,0,0,0.4); Black w/ opacity */
-}
-
-.modal-content {
-    background-color: #fefefe;
-    margin: 15% auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%;
-}
-
-.close {
-color: rgb(54, 144, 228);
-float: right;
-font-size: 28px;
-font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-  color: black;
-  text-decoration: none;
-  cursor: pointer;
-}
