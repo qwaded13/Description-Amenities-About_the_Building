@@ -9,7 +9,7 @@ table{
     height: 100px;
     width: 100%;
     table-layout: auto;
-    border: solid 0.5px rgb(54, 144, 228);
+    border: solid 0.2px rgb(219, 225, 230);
 }
 
 .tabletext{
@@ -18,11 +18,17 @@ table{
 }
 
 #table0x0, #table0x1{
-    border-right: solid 1px transparent;
+    border-left: solid 1px transparent;
+    border-right: solid 0.2px rgb(219, 225, 230);
 }
 
 #table2x0, #table2x1{
     border-right: solid 1px transparent;
+    border-left: solid 0.2px rgb(219, 225, 230);
+}
+
+#table0x0, #table1x0, #table2x0{
+    border-botom: solid 0.2px rgb(219, 225, 230);
 }
 
 ul{
