@@ -3,6 +3,7 @@
     max-height: 100%;
     background-color: white;
     line-height: 40px;
+    font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
 }
 
 table{
@@ -90,14 +91,22 @@ h5{
     font-weight: 200;
 }
 
+#amenitiesHead{
+    font-size: 32px;
+    line-height: 40px;
+    font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
+    font-weight: 200;
+}
 #highlightAmens{
     align-content: left;
 }
 
 #readMore{
-    font-weight: 4;
-    color: rgb(54, 144, 228);
+    font-weight: 700;
+    color: #0080C6;
+    font-size: 12px;
     border: none;
+    text-transform: uppercase;
     align-content: left;
 }
 

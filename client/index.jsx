@@ -65,7 +65,8 @@ class App extends React.Component{
             </div>
             <hr className='separator'/>
             <div>  
-                <h5 id='highlightAmens'>Highlight Amenities </h5>
+                <h5 id="amenitiesHead">Amenities</h5>
+                <h5 id='highlightAmens'>Highlights </h5>
                 <HighlightAmens highlights={this.state.highlightAmens}/>
                 <h5>Building Amenities </h5>
                 <BuildingAmens buildings={this.state.buildingAmens}/>
