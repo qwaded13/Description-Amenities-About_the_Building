@@ -44,6 +44,7 @@ li{
 #descriptionHead{
     font-size: 12px;
     font-weight: 4px;
+    text-align: left;
 }
 
 #petsAllowed{
@@ -72,16 +73,17 @@ li{
 
 #descriptionBox{
     margin-bottom: -10px;
-    background-image: linear-gradient(to bottom, transparent, rgb(236, 236, 236));
 }
 
 #description{
     overflow: hidden;
     text-align: left;
+    background-image: linear-gradient(to bottom, transparent, rgb(236, 236, 236));
 }
 
 h5{
     font-weight: bolder;
+    text-align: left;
 }
 
 #highlightAmens{
