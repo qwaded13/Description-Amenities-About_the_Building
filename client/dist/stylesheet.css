@@ -17,6 +17,18 @@ table{
     font-size: 10pt;
 }
 
+#table0x0, #table1x0{
+    border-right: solid 1px rgb(54, 144, 228);
+}
+
+#table0x2, #table1x2{
+    border-left: solid 1px rgb(54, 144, 228);
+}
+
+#table0x0, #table0x1, #table0x2{
+    border-right: solid 1px rgb(54, 144, 228);
+}
+
 ul{
     list-style-type: none;
     columns: 2;
