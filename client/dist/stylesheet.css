@@ -108,6 +108,22 @@ h5{
     font-weight: 500;
 }
 
+HighlightAmens{
+    font-weight: 200;
+}
+
+BuildingAmens{
+    font-weight: 200;
+}
+
+ListingAmens{
+    font-weight: 200;
+}
+
+OutdoorAmens{
+    font-weight: 200;
+}
+
 #readMore{
     font-weight: 700;
     color: #0080C6;
