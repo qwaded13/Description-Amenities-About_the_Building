@@ -1,19 +1,19 @@
 import React from 'react';
 
-let modal = document.getElementById('calcModal');
-let btn = document.getElementById("calcPopup");
-let span = document.getElementsByClassName("close")[0];
-btn.open = () => {
-    modal.style.display = "block";
-}
-span.closer = () => {
-    modal.style.display = "none";
-}
-window.onclick = function(event) {
-    if (event.target === modal) {
-        modal.style.display = "none";
-    }
-}
+// let modal = document.getElementById('calcModal');
+// let btn = document.getElementById("calcPopup");
+// let span = document.getElementsByClassName("close")[0];
+// btn.open = () => {
+//     modal.style.display = "block";
+// }
+// span.closer = () => {
+//     modal.style.display = "none";
+// }
+// window.onclick = function(event) {
+//     if (event.target === modal) {
+//         modal.style.display = "none";
+//     }
+// }
 
 var Table = () => {
     return(
@@ -34,7 +34,7 @@ var Table = () => {
                     <span>ESTIMATED PAYMENT</span>
                     <br></br>
                     {/* <span><a target='_blank' href='THIS IS A POPUP'>${parseInt((Math.random())*100000)}</a></span> */}
-                    <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">${parseInt((Math.random())*100000)}</button>
+                    <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">${parseInt((Math.random())*100000)}howdy</button>
                         <div id="myModal" class="modal fade" role="dialog">
                             <div class="modal-dialog">
                                 <div class="modal-content">
