@@ -32,7 +32,7 @@ class App extends React.Component{
     }
 
     renderFunc(){
-        Axios.get(`http://ec2-18-218-251-40.us-east-2.compute.amazonaws.com:3009/streetBreezy/api/description${window.location.pathname}`)
+        Axios.get(`/streetBreezy/api/description${window.location.pathname}`)
         .then((response) => {
             console.log('something hit the user client')
             let data = response.data;
