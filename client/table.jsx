@@ -34,15 +34,24 @@ var Table = () => {
                     <span>ESTIMATED PAYMENT</span>
                     <br></br>
                     {/* <span><a target='_blank' href='THIS IS A POPUP'>${parseInt((Math.random())*100000)}</a></span> */}
-                    <button id="calcPopup">${parseInt((Math.random())*100000)}</button>
-                        <div id="calcModal" class="modal">
-                            <div class="modal-content">
-                                <span class="close">Close</span>
-                                <p>This is a modal</p>
+                    <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">${parseInt((Math.random())*100000)}</button>
+                        <div id="myModal" class="modal fade" role="dialog">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    <h4 class="modal-title">Modal Header</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <p>This is a modal</p>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                </div>
+                                </div>
                             </div>
                         </div>
                 </td>
-
             </tr>
             <tr id='tableRow1'>
                 <td className='tabletext' id='table0x1'>
