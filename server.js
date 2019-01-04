@@ -2,10 +2,12 @@ let express = require('express');
 let bodyParser = require('body-parser');
 let retrieveFunctions = require('./retrieverController.js')
 let path = require('path');
+let cors = require('cors');
 
 let server = express();
 server.use(bodyParser.json());
 server.use('/:id', express.static(path.join(__dirname, '/client/dist')));
+server.use(cors());
 
 server.get('/streetBreezy/api/:id', retrieveFunctions.retriever);
 server.get('/*', retrieveFunctions.alt);
