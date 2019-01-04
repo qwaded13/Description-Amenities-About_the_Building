@@ -1,14 +1,15 @@
 #entireDescriptionBox{
-    width: 104.8%;
+    width: 100%;
+    max-height: 100%;
     background-color: white;
     line-height: 40px;
-    margin-left: -16px;
 }
 
 table{
     height: 100px;
     width: 100%;
-    border: solid 1px black;
+    table-layout: auto;
+    border: solid 1px transparent;
 }
 
 .tabletext{
