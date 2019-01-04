@@ -6,7 +6,7 @@ let cors = require('cors');
 
 let server = express();
 server.use(bodyParser.json());
-server.use(express.static(path.join(__dirname, '/client/dist')));
+server.use('/:id', express.static(path.join(__dirname, '/client/dist')));
 server.use(cors());
 
 server.get('/streetBreezy/api/description/:id', retrieveFunctions.retriever);
