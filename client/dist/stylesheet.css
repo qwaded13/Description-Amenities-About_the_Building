@@ -90,3 +90,10 @@ h5{
 #highlightAmens{
     align-content: left;
 }
+
+#readMore{
+    font-weight: 4;
+    color: rgb(54, 144, 228);
+    border: none;
+    align-content: left;
+}
