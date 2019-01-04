@@ -82,12 +82,9 @@ li{
 h5{
     font-weight: bold;
     text-align: left;
-    font-size: 16px;
-    color: #a1a1a1;
 }
 
-h5 #descriptionHead{
-    color: black;
+#descriptionHead{
     font-size: 32px;
     line-height: 40px;
     font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
@@ -95,10 +92,11 @@ h5 #descriptionHead{
 }
 
 #amenitiesHead{
-    font-size: 32px;
+    font-size: 24px;
     line-height: 40px;
     font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
     font-weight: 200;
+    font-color: #a1a1a1;
 }
 #highlightAmens{
     align-content: left;
