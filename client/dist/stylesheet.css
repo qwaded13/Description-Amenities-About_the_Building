@@ -1,6 +1,6 @@
 #entireDescriptionBox{
     width: 104.8%;
-    background-color: lavenderblush;
+    background-color: white;
     line-height: 40px;
     margin-left: -16px;
 }
@@ -51,7 +51,7 @@ li{
 
 #descriptionBox{
     margin-bottom: -10px;
-    background-image: linear-gradient(to bottom, transparent, pink);
+    background-image: linear-gradient(to bottom, transparent, rgb(236, 236, 236));
 }
 
 #description{
