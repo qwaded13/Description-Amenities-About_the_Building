@@ -80,8 +80,10 @@ li{
 }
 
 h5{
-    font-weight: bolder;
+    font-weight: bold;
     text-align: left;
+    font-size: 8px;
+    color: #a1a1a1;
 }
 
 #descriptionHead{
