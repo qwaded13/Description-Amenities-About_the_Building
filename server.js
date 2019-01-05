@@ -11,7 +11,7 @@ server.use(bodyParser.json());
 server.use('/:id', express.static(path.join(__dirname, '/client/dist')));
 server.use(cors());
 
-server.get('/streetBreezy/api/description/:id', retrieveFunctions.retriever);
+server.get('/api/description/:id', retrieveFunctions.retriever);
 // server.get('/*', retrieveFunctions.alt);
 
 let port = 3009
