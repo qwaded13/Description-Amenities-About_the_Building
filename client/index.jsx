@@ -26,17 +26,13 @@ class App extends React.Component{
 
     componentDidMount(){
         // console.log('LOVE YOU KENNNYYYY')
-        // console.log('Mounted. Running renderFunc');
-        // console.log(window.location);
         this.renderFunc();
     }
 
     renderFunc(){
         Axios.get(`/api/description${window.location.pathname}`)
         .then((response) => {
-            console.log('something hit the user client')
             let data = response.data;
-            console.log('this is the response data: ', data)
             this.setState({fullDescriptionBox: data, 
                 description: data.description,
                 descriptionPreSpan: data.description.slice(0,300), 
