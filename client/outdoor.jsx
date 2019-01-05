@@ -2,7 +2,7 @@ import React from 'react';
 
 let outdoorAmens = (props) => {
     return(
-        <ul>
+        <ul id='oDAmens'>
             {props.outdoors.map((outdoor) => {
                 return <li>{outdoor}</li>
             })}
