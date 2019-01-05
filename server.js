@@ -6,10 +6,10 @@ let cors = require('cors');
 let compression = require('compression');
 
 let server = express();
+server.use(compression());
 server.use(bodyParser.json());
 server.use('/:id', express.static(path.join(__dirname, '/client/dist')));
 server.use(cors());
-server.use(compression());
 
 server.get('/streetBreezy/api/description/:id', retrieveFunctions.retriever);
 // server.get('/*', retrieveFunctions.alt);
