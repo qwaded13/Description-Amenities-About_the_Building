@@ -4,7 +4,6 @@ let fs = require('fs');
 
 //Other modules
 let db = require('../db.js');
-let DescriptionBox = require('../db.js').DescriptionBox; //DB Model
 
 let records = [];
 
@@ -21,9 +20,9 @@ let generator = function(dataTotal) {
   }
 };
 
-generator(100)
+generator(1000)
 
-fs.writeFile('testData.json', JSON.stringify(records), (err) => {
+fs.writeFile('./testData.json', JSON.stringify(records), (err) => {
   if (err) console.log(err);
   else console.log('Data created - go wild');
 });
