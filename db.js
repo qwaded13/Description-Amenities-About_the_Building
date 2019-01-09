@@ -1,7 +1,8 @@
 var mongoose = require('mongoose');
 
+// let hostedURL = 'mongodb://ajoo97:abc123@ds131814.mlab.com:31814/fsgitrepopuller';
 
-var db = mongoose.connect('mongodb://ajoo97:abc123@ds131814.mlab.com:31814/fsgitrepopuller' || 'mongodb://localhost:27017/streetBreezy');
+var db = mongoose.connect('mongodb://localhost:27017/streetBreezy');
 
 let DescriptionBoxSchema = mongoose.Schema({
     id: Number,
