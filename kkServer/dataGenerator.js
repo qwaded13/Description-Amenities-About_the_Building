@@ -20,7 +20,7 @@ let generator = function(dataTotal) {
   }
 };
 
-generator(10000)
+generator(100000);
 
 fs.writeFile('./testData.json', JSON.stringify(records), (err) => {
   if (err) console.log(err);
