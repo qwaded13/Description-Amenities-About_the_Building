@@ -2,8 +2,10 @@ var mongoose = require('mongoose');
 
 // let hostedURL = 'mongodb://ajoo97:abc123@ds131814.mlab.com:31814/fsgitrepopuller';
 
-var db = mongoose.connect('mongodb://localhost:27017/streetBreezy');
-mongoose.set('debug', true);
+var db = mongoose.connect('mongodb://localhost:27017/streetBreezy', (err => {
+    if (err) console.log(err);
+    else console.log('connected to DB!');
+}));
 
 let DescriptionBoxSchema = mongoose.Schema({
     id: Number,
