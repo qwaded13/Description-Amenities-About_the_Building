@@ -12,16 +12,44 @@ let loadData = () => {
     return new DescriptionBox(record);
   })
 
-  DescriptionBox.collection.insertMany(loadRecords, (err, docs) => {
-    if (err) console.log(err);
-    else console.timeEnd('loadTime')
-  })
+  
+  let recordChunks = [];
+  let chunk = 10000
+  for (let i = 0; i < loadRecords.length; i += chunk) {
+    recordChunks.push(loadRecords.slice(i, i + chunk));
+  }
 
-  // let recordChunks = [];
-  // let chunk = 100000
-  // for (let i = 0; i < loadRecords.length; i += chunk) {
-  //   recordChunks.push(loadRecords.slice(i, i + chunk));
-  // }
+  console.log(recordChunks.length)
+
+  let chunkIndex = 0;
+  let batchInsert = () => {
+    DescriptionBox.collection.insertMany(recordChunks[chunkIndex++], (err, docs) => {
+      if (err) console.log(err);
+      else if (recordChunks[chunkIndex] && recordChunks[chunkIndex].length) {
+        console.log('loading chunk #' + chunkIndex);
+        batchInsert();
+      } else {
+        console.timeEnd('loadTime')
+      }
+    })
+  }
+
+  batchInsert();
+  
+  // let loadingPromises = recordChunks.map((chunk, i) => {
+  //   return DescriptionBox.insertMany(chunk, (err, docs) => {
+  //     if (err) console.log(err);
+  //     else console.log('logging chunk #' + i);
+  //   });
+  // })
+
+  // Promise.all(loadingPromises)
+  //   .then((result) => {
+  //     console.timeEnd('loadTime')
+  //   })
+  //   .catch((err) => {
+  //     console.log(err);
+  //   })
 
   // recordChunks.forEach((chunk, i) => {
   //   DescriptionBox.insertMany(chunk, (err, docs) => {
