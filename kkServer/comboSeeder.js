@@ -1,33 +1,14 @@
 // Other Modules
 let db = require('../db.js');
 let DescriptionBox = require('../db.js').DescriptionBox; //DB Model
-
-
-//Dependencies
-let faker = require('faker');
-let fs = require('fs');
-
-// console.time('generation time: ')
-let generator = function(batchSize, startID) {
-  let records = [];
-  for (let i = startID; i < startID + batchSize; i++) {
-    records.push({
-      id: i,
-      description: 'test',
-      highlightAmens: ['highlight'],
-      buildingAmens: ['building'],
-      listingAmens: ['listing'],
-      outdoorAmens: ['outdoor']
-    });
-  }
-  return records;
-}
+let { generator } = require('./dataGenerator.js')
 
 let currentTotal = 0;
 let dataTotal = 10000000;
 let batchNumber = 0;
 
 console.time('loadTime');
+
 let loader = () => {
   DescriptionBox.collection.insertMany(generator(100000, currentTotal), (err, doc) => {
     if (err) console.log(err);
@@ -43,4 +24,5 @@ let loader = () => {
     }
   })
 }
+
 loader();
