@@ -10,7 +10,8 @@ let batchNumber = 0;
 console.time('loadTime');
 
 let loader = () => {
-  DescriptionBox.collection.insertMany(generator(100000, currentTotal), (err, doc) => {
+  let data = generator(100000, currentTotal)
+  DescriptionBox.collection.insertMany(data, (err, doc) => {
     if (err) console.log(err);
     else if (currentTotal < dataTotal) {
       if (!(currentTotal % 1000000)){
