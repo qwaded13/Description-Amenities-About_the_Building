@@ -5,10 +5,11 @@ const pool = new Pool({
   connectionString: connectionString
 })
 
-pool.query('SELECT version()', (err, res) => {
-  if (err) console.log(err);
-  else {
+pool.query('SELECT version()')
+  .then((res) => {
     console.log('Query result: ', res)
     pool.end()
-  }
-});
+  })
+  .catch((err) => {
+    console.log(err)
+  });
