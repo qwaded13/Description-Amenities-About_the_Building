@@ -4,7 +4,7 @@ module.exports.retriever = (req,res) => {
     const {id} = req.params;
     dbComponents.DescriptionBox.findOne({id: id}).exec((err, data) => {
         if(err){
-            res.sendStatus(status);
+            res.sendStatus(500);
         } else if(data){
             res.send(data);
         }
