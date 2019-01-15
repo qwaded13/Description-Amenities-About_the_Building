@@ -8,7 +8,11 @@ var db = mongoose.connect('mongodb://localhost:27017/streetBreezy', (err => {
 }));
 
 let DescriptionBoxSchema = mongoose.Schema({
-    id: Number,
+    id: {
+      type: Number,
+      unique: true,
+      index: true
+    },
     description: String,
     highlightAmens: Array,
     buildingAmens: Array,
