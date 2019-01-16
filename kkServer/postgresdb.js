@@ -26,10 +26,10 @@ pool.query(`
   CREATE TABLE IF NOT EXISTS descriptions.descriptions (
     id INTEGER NOT NULL PRIMARY KEY,
     description TEXT NOT NULL,
-    highlightAmens TEXT [] NOT NULL,
-    buildingAmens TEXT [] NOT NULL,
-    listingAmens TEXT [] NOT NULL,
-    outdoorAmens TEXT [] NOT NULL
+    highlightAmens TEXT [],
+    buildingAmens TEXT [],
+    listingAmens TEXT [],
+    outdoorAmens TEXT []
   );
 `)
 .then((res) => {
