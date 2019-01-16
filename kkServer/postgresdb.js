@@ -5,23 +5,6 @@ const pool = new Pool({
   connectionString: connectionString
 })
 
-// pool.query('SELECT version()')
-//   .then((res) => {
-//     console.log('Query result: ', res)
-//     pool.end()
-//   })
-//   .catch((err) => {
-//     console.log(err)
-//   });
-
-// pool.query('CREATE SCHEMA descriptions;')
-//   .then((res) => {
-//     console.log(res);
-//   })
-//   .catch((err) => {
-//     console.log(err);
-//   });
-
 pool.query(`
   CREATE TABLE IF NOT EXISTS descriptions.descriptions (
     id INTEGER NOT NULL PRIMARY KEY,
