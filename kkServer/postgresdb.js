@@ -23,7 +23,7 @@ const pool = new Pool({
 //   });
 
 pool.query(`
-  CREATE TABLE descriptions.descriptions (
+  CREATE TABLE IF NOT EXISTS descriptions.descriptions (
     id INTEGER NOT NULL PRIMARY KEY,
     description TEXT NOT NULL,
     highlightAmens TEXT [] NOT NULL,
@@ -35,7 +35,7 @@ pool.query(`
 .then((res) => {
   console.log('table created!');
   pool.query(`
-    CREATE INDEX id ON descriptions.descriptions (id);
+    CREATE INDEX IF NOT EXISTS id ON descriptions.descriptions (id);
   `)
     .then((res) => {
       console.log('Index created on col id');

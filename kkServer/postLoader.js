@@ -1,9 +1,9 @@
 let pool = require('./postgresdb.js')
 let { generator } = require('./dataGenerator')
-let createCsvWriter = require('csv-writer').createObjectCsvWriter;
+let converter = require('json-2-csv');
+// let createCsvWriter = require('csv-writer').createArrayCsvWriter;
 
 
-// let converter = require('json-2-csv');
 
 
 // use the data generation script to create one batch of data
@@ -11,32 +11,47 @@ let createCsvWriter = require('csv-writer').createObjectCsvWriter;
 // write each batch to a csv and load it into postgres
 // on each successful query, run the loading func again
 
-let csvWriter = createCsvWriter({
-    header: [
-      {id: 'id', title: 'id'},
-      {id: 'description', title: 'description'},
-      {id: 'highlightAmens', title: 'highlightAmens'},
-      {id: 'buildingAmens', title: 'buildingAmens'},
-      {id: 'listingAmens', title: 'listingAmens'},
-      {id: 'outdoorAmens', title: 'outdoorAmens'},
-    ],
-    path: './batch.csv'
-});
+// let csvWriter = createCsvWriter({
+    // header: ['id', 'description', 'highlightAmens', 'buildingAmens', 'listingAmens', 'outdoorAmens'],
+    // path: './batch.csv'
+// });
 
 
 let currentTotal = 0;
-let dataTotal = 100000;
+let dataTotal = 500000;
 let batchNumber = 0;
 
 let postLoader = () => {
-  let data = generator(100000, currentTotal)
-  csvWriter.writeRecords(data)
+  let data = generator(500000, currentTotal)
+  converter.json2csvAsync(data)
     .then(() => {
       console.log('created a CSV!');
+      pool.query(`COPY descriptions.descriptions FROM '${__dirname}\\batch.csv' DELIMITER ',' CSV HEADER`)
+        .then(() => {
+          console.log('DONEZO');
+        })
+        .catch((err) => {
+          console.log(err);
+        })
     })
     .catch((err) => {
       console.log(err);
     })
+  
+  // csvWriter.writeRecords(data)
+  //   .then(() => {
+  //     console.log('created a CSV!');
+  //     pool.query(`COPY descriptions.descriptions FROM '${__dirname}\\batch.csv' DELIMITER ',' CSV HEADER`)
+  //       .then(() => {
+  //         console.log('DONEZO');
+  //       })
+  //       .catch((err) => {
+  //         console.log(err);
+  //       })
+  //   })
+  //   .catch((err) => {
+  //     console.log(err);
+  //   })
 
   // DescriptionBox.collection.insertMany(data, (err, doc) => {
   //   if (err) console.log(err);
