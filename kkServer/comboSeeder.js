@@ -15,7 +15,7 @@ let loader = () => {
     currentTotal += 100000;
     if (err) console.log(err);
     else if (currentTotal < dataTotal) {
-      if (!(currentTotal % 1000000)){
+      if (!((currentTotal - 1) % 1000000)){
         batchNumber++;
         console.log(`Loading batch #${batchNumber}/10`);
       } 
