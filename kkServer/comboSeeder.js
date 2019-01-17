@@ -3,7 +3,7 @@ let db = require('../db.js');
 let DescriptionBox = require('../db.js').DescriptionBox; //DB Model
 let { generator } = require('./dataGenerator.js')
 
-let currentTotal = 0;
+let currentTotal = 1;
 let dataTotal = 10000000;
 let batchNumber = 0;
 
