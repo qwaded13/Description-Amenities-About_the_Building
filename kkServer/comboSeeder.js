@@ -12,13 +12,13 @@ console.time('loadTime');
 let loader = () => {
   let data = generator(100000, currentTotal)
   DescriptionBox.collection.insertMany(data, (err, doc) => {
+    currentTotal += 100000;
     if (err) console.log(err);
     else if (currentTotal < dataTotal) {
       if (!(currentTotal % 1000000)){
         batchNumber++;
         console.log(`Loading batch #${batchNumber}/10`);
       } 
-      currentTotal += 100000
       loader();
     } else {
       if (currentTotal >= dataTotal) console.timeEnd('loadTime')
