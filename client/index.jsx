@@ -35,8 +35,8 @@ class App extends React.Component{
             let data = response.data;
             this.setState({fullDescriptionBox: data, 
                 description: data.description,
-                descriptionPreSpan: data.description.slice(0,300), 
-                descriptionPostSpan: data.description.slice(300),
+                descriptionPreSpan: data.description.slice(0,200), 
+                descriptionPostSpan: data.description.slice(200),
                 highlightAmens: data.highlightAmens, 
                 buildingAmens: data.buildingAmens, 
                 listingAmens: data.listingAmens, 
