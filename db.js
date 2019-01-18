@@ -2,7 +2,7 @@ var mongoose = require('mongoose');
 
 // let hostedURL = 'mongodb://ajoo97:abc123@ds131814.mlab.com:31814/fsgitrepopuller';
 
-var db = mongoose.connect('mongodb://localhost:27017/streetBreezy', (err => {
+var db = mongoose.connect('mongodb://3.16.207.39/streetBreezy', (err => {
     if (err) console.log(err);
     else console.log('connected to DB!');
 }));
