@@ -1,3 +1,4 @@
+require('newrelic');
 let express = require('express');
 let bodyParser = require('body-parser');
 let retrieveFunctions = require('./retrieverController.js')
@@ -13,10 +14,13 @@ server.use(cors());
 
 server.get('/api/description/:id', retrieveFunctions.retriever);
 // server.get('/*', retrieveFunctions.alt);
+server.get('/loaderio-37c8cab985f08f88038ba3ac0f33b76c', (req, res) => {
+    res.send('loaderio-37c8cab985f08f88038ba3ac0f33b76c')
+})
 
 let port = 3009
 server.listen(port, () => {
-    console.log(`listning on port ${port}`)
+    console.log(`listening on port ${port}`)
 })
 
 module.exports.server = server;

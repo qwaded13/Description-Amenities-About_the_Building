@@ -7,6 +7,8 @@ var db = mongoose.connect('mongodb://18.188.82.107/streetBreezy', (err => {
     else console.log('connected to DB!');
 }));
 
+mongoose.set('debug', true);
+
 let DescriptionBoxSchema = mongoose.Schema({
     id: {
       type: Number,
