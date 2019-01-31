@@ -2,7 +2,7 @@ var db = require('./db.js').db;
 
 module.exports.retriever = (req,res) => {
     const {id} = req.params;
-    db.collection('DescriptionBox').findOne({id: id}, (err, data) => {
+    db.DescriptionBox.findOne({id: id}, (err, data) => {
         if(err){
             res.sendStatus(500);
         } else if(data){
