@@ -39,19 +39,23 @@ These instructions will get you a copy of the project up and running on your loc
 ### Baseline
 * No modifications to codebase
 * Max Capacity: 500 Requests per Second (RPS) for 1 minute
+
 ![benchmark-metrics](./documentation/benchmark.png)
 
 ### Load Balanced Across 2 Services
 * Set up an Nginx server in front of service servers
 * Balanced requests across two service servers using the **"least connections"** algorithm
 * Max Capacity: 1000 RPS
+
 ![load-balance-2](./documentation/load-balance-2.png)
 * Results: increased the average latency due to the extra network requests going through the load-balancer, but effectively doubled the load capacity of the service
 
 ### Load Balanced Across 4 Services
 * Connected 2 additional service servers to load balancer (4 service servers total)
 * Max Capacity: 2000 RPS
+
 ![load-balance-4](./documentation/load-balance-4.png)
+
 * Results: Additional servers reduced the average latency, and doubled the previous load capacity, as expected.
 
 
