@@ -2,23 +2,27 @@ var mongoose = require('mongoose');
 
 // let hostedURL = 'mongodb://ajoo97:abc123@ds131814.mlab.com:31814/fsgitrepopuller';
 
-var db = mongoose.connect('mongodb://18.188.82.107/streetBreezy', {autoIndex: false}, (err => {
-    if (err) console.log(err);
+var db = mongoose.connect(
+  'mongodb://18.191.66.142/streetBreezy',
+  { autoIndex: false },
+  (err) => {
+    if (err) console.log('error from the DB', err);
     else console.log('connected to DB!');
-}));
+  }
+);
 
 let DescriptionBoxSchema = mongoose.Schema({
-    id: {
-      type: Number,
-      unique: true
-    },
-    description: String,
-    highlightAmens: Array,
-    buildingAmens: Array,
-    listingAmens: Array,
-    outdoorAmens: Array
-})
-DescriptionBoxSchema.index({id: 1});
+  id: {
+    type: Number,
+    unique: true
+  },
+  description: String,
+  highlightAmens: Array,
+  buildingAmens: Array,
+  listingAmens: Array,
+  outdoorAmens: Array
+});
+DescriptionBoxSchema.index({ id: 1 });
 
 let DescriptionBox = mongoose.model('descriptionBox', DescriptionBoxSchema);
 
@@ -49,12 +53,12 @@ let DescriptionBox = mongoose.model('descriptionBox', DescriptionBoxSchema);
 //             } else if (!exists){
 //                 let newDescriptionBox = new DescriptionBox({
 //                     id: i,
-//                     description: description, 
-//                     highlightAmens: input1 || null, 
+//                     description: description,
+//                     highlightAmens: input1 || null,
 //                     buildingAmens: input2 || null,
-//                     listingAmens: input3 || null, 
-//                     outdoorAmens: input4 || null 
-//                 }); 
+//                     listingAmens: input3 || null,
+//                     outdoorAmens: input4 || null
+//                 });
 //                 newDescriptionBox.save();
 //             }
 //         })

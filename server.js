@@ -15,8 +15,8 @@ server.use(cors());
 server.use(morgan('dev'));
 
 server.get('/api/description/:id', retrieveFunctions.retriever);
-server.get('/loaderio-37c8cab985f08f88038ba3ac0f33b76c.txt', (req, res) => {
-    res.send('loaderio-37c8cab985f08f88038ba3ac0f33b76c');
+server.get('/loaderio-c69f5a82221cf52e67424e0996100853', (req, res) => {
+    res.send('loaderio-c69f5a82221cf52e67424e0996100853');
 })
 
 let port = 3009
